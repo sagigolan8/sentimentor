@@ -24,15 +24,14 @@ button.onclick = function () {
       const polarity = data.result.polarity;
       const type = data.result.type;
       if (polarity === 0) {
-        divChild.style.color = "grey";
+        divChild.style.color = "rgb(105,105,105)";
       } else if (polarity > 0) {
         divChild.style.color = "green";
       } else if (polarity < 0) {
         divChild.style.color = "red";
       }
-
       loadingDiv.style.visibility = "hidden";
-      divChild.innerHTML = `polarity: ${polarity} </br> type: ${type}`;
+      divChild.innerHTML = `<u>polarity:</u> ${polarity} </br> <u>type:</u> ${type}`;
       div.append(divChild);
     })
     .catch((error) => {
@@ -43,4 +42,10 @@ button.onclick = function () {
       console.log(error);
       divChild.append("An error occurred, details in the console...");
     });
+};
+
+const resetButton = document.getElementById("reset-button");
+const textArea = document.getElementById("inputbox");
+resetButton.onclick = function () {
+  textArea.value = "";
 };
