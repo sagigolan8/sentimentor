@@ -53,18 +53,3 @@ button.onclick = function () {
 
   console.log(response);
 };
-
-statusCat(404);
-
-const img = document.createElement("img");
-document.body.append(img);
-function statusCat(status) {
-  const response = fetch(`https://http.cat/${status}.jpg`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-      //   img.setAttribute
-    });
-}
