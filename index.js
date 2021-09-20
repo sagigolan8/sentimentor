@@ -1,8 +1,8 @@
-const button = document.getElementById("button"); //get button element
+const button = document.getElementById("check-button"); //get button element
 button.onclick = function () {
   const userText = document.querySelector(".inputbox").value; //get the text from the user
   const div = document.getElementById("result"); //get the result element
-  div.innerHTML = "<b>the result is: </b>";
+  div.innerHTML = "<b><u>the result is: <u></b>";
   let loadingDiv = document.getElementById("loading");
   loadingDiv.style.visibility = "visible";
   const divChild = document.createElement("p");
@@ -18,33 +18,25 @@ button.onclick = function () {
   })
     .then((response) => {
       img.setAttribute("src", `https://http.cat/${response.status}`);
-      console.log(response.status);
       return response.json(); //translte for us to JavaScript
     })
     .then((data) => {
-      const dataResult = JSON.stringify(data.result)
-        .replaceAll('"', "")
-        .replaceAll("{", "")
-        .replaceAll("}", "");
-      if (dataResult.includes("neutral")) {
-        divChild.append(dataResult);
+      const polarity = data.result.polarity;
+      const type = data.result.type;
+      if (polarity === 0) {
         divChild.style.color = "grey";
-      } else if (dataResult.includes("positive")) {
-        divChild.append(dataResult);
+      } else if (polarity > 0) {
         divChild.style.color = "green";
-      } else if (dataResult.includes("negative")) {
-        divChild.append(dataResult);
+      } else if (polarity < 0) {
         divChild.style.color = "red";
       }
 
       loadingDiv.style.visibility = "hidden";
-
-      console.log(response);
+      divChild.innerHTML = `polarity: ${polarity} </br> type: ${type}`;
       div.append(divChild);
     })
     .catch((error) => {
       loadingDiv.style.visibility = "hidden";
-      console.log(response.status);
       divChild.style.color = "red";
       divChild.style.fontSize = "20px";
       div.append(divChild);

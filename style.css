@@ -1,20 +1,36 @@
-/* html {
-  background: url("https://media.istockphoto.com/photos/neon-stage-picture-id1289116611?b=1&k=20&m=1289116611&s=170667a&w=0&h=I3R_sqMwRRdJk4iGIU26CrIAyWRqKVFTUme0Wz_7Xvk=")
-    no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+body {
+  margin: 0;
+  font-family: "Sriracha", sans-serif;
+  font-weight: bold;
+  background: linear-gradient(to right, #3d7eaa, #ffe47a);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  line-height: 1.3rem;
+  width: 160ch;
+  animation: typing 2s steps(22), blink 0.5s step-end alternate;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 textarea {
+  font-family: "Sriracha", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  box-shadow: 0px 0px 70px 0px;
+
+  border: 2px solid rgb(105, 105, 100);
+  padding: 10px;
+  border-radius: 19px;
   margin: 0px;
-  width: 250px;
-  height: 100px;
+  width: 340px;
+  height: 130px;
 }
 
 body {
-  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,20 +40,15 @@ h1 {
   font-weight: bold;
 }
 
-img {
-  width: 30%;
-  height: 30%;
-}
-
 #loading {
   content: "";
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px;
+  box-shadow: 0px 0px 30px 0px;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 100px;
   margin-top: -10px;
   margin-left: -10px;
   border-radius: 50%;
@@ -51,4 +62,88 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  width: 16%;
+  height: 12%;
+  border-radius: 24px;
+  border: transparent;
+  box-shadow: 0px 0px 70px 0px;
+}
+
+button {
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Sriracha", sans-serif;
+  font-weight: bold;
+  border: transparent;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+button:hover {
+  background: #91abbd;
+  color: #080808;
 }
