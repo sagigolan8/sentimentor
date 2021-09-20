@@ -1,0 +1,49 @@
+/* html {
+  background: url("https://media.istockphoto.com/photos/neon-stage-picture-id1289116611?b=1&k=20&m=1289116611&s=170667a&w=0&h=I3R_sqMwRRdJk4iGIU26CrIAyWRqKVFTUme0Wz_7Xvk=")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+textarea {
+  margin: 0px;
+  width: 250px;
+  height: 100px;
+}
+
+body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+#loading {
+  content: "";
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 4px dashed #ccc;
+  border-top-color: #000;
+  animation: spinner 0.6s linear infinite;
+  visibility: hidden;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
