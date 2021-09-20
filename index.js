@@ -6,6 +6,7 @@ button.onclick = function () {
   let loadingDiv = document.getElementById("loading");
   loadingDiv.style.visibility = "visible";
   const divChild = document.createElement("p");
+  const img = document.getElementById("image");
   const response = fetch("https://sentim-api.herokuapp.com/api/v1/", {
     //fetch gets url,methods,headers,body
     method: "POST", //
@@ -16,8 +17,8 @@ button.onclick = function () {
     body: JSON.stringify({ text: userText }), //JSON.stringify - turn the object into a string
   })
     .then((response) => {
+      img.setAttribute("src", `https://http.cat/${response.status}`);
       console.log(response.status);
-      //   statusCat(response.status);
       return response.json(); //translte for us to JavaScript
     })
     .then((data) => {
@@ -50,6 +51,4 @@ button.onclick = function () {
       console.log(error);
       divChild.append("An error occurred, details in the console...");
     });
-
-  console.log(response);
 };
