@@ -4,18 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sentimentor</title>
-    <script src="index.js" defer></script>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <h1>This is a Sentimentor!</h1>
+    <div id="hedears">
+      <h1>This is a Sentimentor!</h1>
 
-    <h3>please enter a phrase you would like to check in the box below:</h3>
-
-    <textarea id="inputbox" class="inputbox"> </textarea>
-    <button id="check-button">Check</button>
-    <button id="reset-button">Reset</button>
+      <h3>please enter a phrase you would like to check in the box below:</h3>
+    </div>
+    <textarea class="inputbox" id="inputbox"></textarea>
+    <div id="buttons">
+      <a id="check-button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Check
+      </a>
+      <a id="reset-button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Reset
+      </a>
+    </div>
     <div id="loading"></div>
     <div id="result" style="font-size: large"></div>
     <img id="image" />
