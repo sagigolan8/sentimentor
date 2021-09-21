@@ -29,10 +29,25 @@ body {
   top: 0;
 }
 
-img {
+#gifs {
+  position: absolute;
+  top: 15%;
+  animation: mymove 12s infinite;
+}
+
+@keyframes mymove {
+  from {
+    left: -90px;
+  }
+  to {
+    left: 1550px;
+  }
+}
+
+#image {
   width: 12%;
   border-radius: 24px;
-  box-shadow: 0px 0px 70px 0px;
+  box-shadow: 0 0px 20px 0 white, 0 0px 20px 0 white;
   position: absolute;
   left: 46%;
   bottom: 1%;
@@ -53,6 +68,7 @@ textarea {
 }
 
 #result {
+  font-size: 22px;
   color: #efe1ce;
   font-family: "Sriracha", sans-serif;
   text-align: center;

@@ -20,9 +20,10 @@ button.onclick = function () {
       divChild.style.borderRadius = "24px";
       divChild.style.border = "3px solid #efe1ce";
       img.setAttribute("src", `https://http.cat/${response.status}`);
-      return response.json(); //translte for us to JavaScript
+      return response.json(); // converting the response to a JavaScript object
     })
     .then((data) => {
+      // displaying the result in the right color
       const polarity = data.result.polarity;
       const type = data.result.type;
       if (polarity === 0) {
@@ -51,4 +52,10 @@ const resetButton = document.getElementById("reset-button"); //function that res
 const textArea = document.getElementById("inputbox");
 resetButton.onclick = function () {
   textArea.value = "";
+};
+
+const removeGif = document.getElementById("remove-animation"); //function that stops the animation
+const gifs = document.getElementById("gifs");
+removeGif.onclick = function () {
+  gifs.style.visibility = "hidden";
 };
